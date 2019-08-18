@@ -8,13 +8,15 @@ class UserInput extends React.Component {
   provideInput = event => {
     // 1.  stop the form from submitting
     event.preventDefault();
+    console.log(this.inputsRef.current.value);
 
     const guess = {
       inputs: parseInt(this.inputsRef.current.value)
     };
 
     this.props.enterInput(guess);
-    event.currentTarget.reset();
+    //event.currentTarget.reset();
+    this.inputsRef.current.value = "";
   };
 
   render() {
