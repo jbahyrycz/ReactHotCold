@@ -15,8 +15,7 @@ class UserInput extends React.Component {
     };
 
     this.props.enterInput(guess);
-    //event.currentTarget.reset();
-    this.inputsRef.current.value = "";
+    event.currentTarget.reset();
   };
 
   render() {

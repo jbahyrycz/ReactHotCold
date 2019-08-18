@@ -11,18 +11,19 @@ describe("<UserInput />", () => {
   it("Should fire the enterInput callback when the form is submitted", () => {
     const callback = jest.fn();
     const wrapper = mount(<UserInput enterInput={callback} />);
-    const value1 = { inputs: NaN };
+    const expected = { inputs: 15 };
+    const value1 = 15;
     wrapper.update();
     wrapper.find('input[type="number"]').instance().value = value1;
     wrapper.simulate("submit");
-    expect(callback).toHaveBeenCalledWith(value1);
+    expect(callback).toHaveBeenCalledWith(expected);
   });
 
   it("Should not fire enterInput if the input is empty", () => {
     const callback = jest.fn();
     const wrapper = mount(<UserInput enterInput={callback} />);
-    const value1 = { inputs: NaN };
+    const expected = { inputs: NaN };
     wrapper.simulate("submit");
-    expect(callback).toHaveBeenCalledWith(value1);
+    expect(callback).toHaveBeenCalledWith(expected);
   });
 });
