@@ -12,7 +12,6 @@ describe("<UserAnswers />", () => {
   it("Renders the correct UserAnswers", () => {
     let guessValue = "55";
     let guess = { inputs: guessValue };
-    //shallow(<UserAnswers answers={guesses} />);
     const wrapper = shallow(<UserAnswers answers={guess} />);
     expect(wrapper.text()).toEqual(guessValue);
   });
