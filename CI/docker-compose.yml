@@ -13,6 +13,6 @@ services:
          dockerfile: Dockerfile
       image: app_tester
       depends_on:
-         - build
+         - builder
       volumes:
          - ./artifacts:/ReactHotCold/dist
