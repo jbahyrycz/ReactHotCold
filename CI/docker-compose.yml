@@ -5,8 +5,6 @@ services:
          context: Build
          dockerfile: Dockerfile
       image: app_builder
-      volumes:
-         - ./artifacts:/ReactHotCold/dist
    tester:
       build:
          context: Test
@@ -14,5 +12,3 @@ services:
       image: app_tester
       depends_on:
          - builder
-      volumes:
-         - ./artifacts:/ReactHotCold/dist
