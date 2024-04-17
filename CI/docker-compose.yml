@@ -1,0 +1,18 @@
+version: '3.8'
+services:
+   builder:
+      build:
+         context: Build
+         dockerfile: Dockerfile
+      image: app_builder
+      volumes:
+         - ./artifacts:/ReactHotCold/dist
+   tester:
+      build:
+         context: Test
+         dockerfile: Dockerfile
+      image: app_tester
+      depends_on:
+         - build
+      volumes:
+         - ./artifacts:/ReactHotCold/dist
