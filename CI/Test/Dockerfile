@@ -1,2 +1,2 @@
-FROM app_build:latest
+FROM app_builder:latest
 RUN CI=TRUE npm test a
