@@ -1,5 +1,5 @@
 FROM node:latest
 WORKDIR /app
-COPY ./artifacts .
+COPY ./build_artifacts .
 RUN npm install -g serve
 CMD serve -s build
