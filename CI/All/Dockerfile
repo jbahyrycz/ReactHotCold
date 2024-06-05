@@ -1,0 +1,8 @@
+FROM node:latest
+RUN apt-get update && apt-get install git -y
+RUN git clone https://github.com/jbahyrycz/ReactHotCold.git
+WORKDIR /ReactHotCold
+RUN npm i
+RUN npm run-script build
+RUN npm install -g serve
+CMD serve -s build
